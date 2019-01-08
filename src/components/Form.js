@@ -28,7 +28,7 @@ import React, { Component } from 'react'
          }
         
          console.log(newData)
-         console.log(Data);
+        //  console.log(Data);
      }
   render() {
     return (
