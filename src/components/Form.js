@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import Data from './Data'
  class Form extends Component {
      constructor(){
          super();
@@ -8,7 +8,7 @@ import React, { Component } from 'react'
              description:'',
              price:'',
              availability:'',
-             data:[]
+             data:["a"]
              
          }
      }
@@ -26,13 +26,14 @@ import React, { Component } from 'react'
              price:this.state.price,
              availability:this.state.availability
          }
-        
+         this.state.data.unshift(newData)
          console.log(newData)
-        //  console.log(Data);
+         console.log(this.state.data)
      }
   render() {
     return (
-      <div className="container col-lg-6">
+        <div className= "row">
+      <div className=" col-sm-6">
 
           <form onSubmit={this.handleSubmit}>
               <div className="form-group">
@@ -54,6 +55,10 @@ import React, { Component } from 'react'
                 </div>
               <button type="submit" className="btn btn-primary">Button</button>
           </form>
+         
+         </div>
+         <div className="col-sm-6"> <Data data ={this.state.data}/>
+      </div>
       </div>
     )
   }
